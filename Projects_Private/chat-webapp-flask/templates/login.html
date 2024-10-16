@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+</head>
+<body>
+    <h1>Logowanie</h1>
+    <form id="login-form" method="POST">
+        {{ form.hidden_tag() }}
+        <label for="username">Nazwa użytkownika:</label>
+        {{ form.username() }} <br>
+        <label for="password">Hasło:</label>
+        {{ form.password() }} <br>
+        <div id="login-message"></div>
+        <button class="button" type="submit">{{ form.submit() }}</button>
+    </form>
+    <a href="/register">Nie masz konta? Zarejestruj się</a>
+</body>
+</html>
+

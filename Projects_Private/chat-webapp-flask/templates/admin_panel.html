@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function confirmDeletion(form, username) {
+          const confirmed = confirm(`Czy na pewno chcesz usunąć użytkownika: ${username}?`);
+          return confirmed;
+        }
+      </script>
+
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+        }
+        h3 {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <h3> Users count: {{ user_count }}</h3>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Is Admin?</th>
+                <th>Email Verified?</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.surname }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.phone_number }}</td>
+                <td>{{ 'Tak' if user.is_admin else 'Nie' }}</td>
+                <td>{{ 'Tak' if user.email_verified else 'Nie' }}</td>
+                <td>
+                    <form method="POST" action="{{ url_for('delete_user', user_id=user.id) }}" onsubmit="return confirmDeletion(this ,'{{ user.username }}')" style="display:inline-block;">
+                        <button type="submit" class="delete-btn">Usuń</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Dodaj nowego użytkownika</h2>
+    <form action="{{ url_for('create_user') }}" method="POST">
+        <label for="name">Imię:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="surname">Nazwisko:</label>
+        <input type="text" id="surname" name="surname" required>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <label for="phone_number">Numer telefonu:</label>
+        <input type="text" id="phone_number" name="phone_number" required>
+        <label for="password">Hasło:</label>
+        <input type="password" id="password" name="password" required>
+        <label for="is_admin">Admin:</label>
+        <input type="checkbox" id="is_admin" name="is_admin">
+        <br><button type="submit" class="submit-btn">Dodaj użytkownika</button>
+    </form>
+    <a href="{{ url_for('logout') }}">Wyloguj</a>
+</body>
+</html>
+

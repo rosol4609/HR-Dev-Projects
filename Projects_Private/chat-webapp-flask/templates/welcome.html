@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witaj</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+</head>
+<body>
+    <h1>Witaj, {{ name }}!</h1>
+
+    <div class="content-container">
+        <div id="other_users" class="box">
+            <h2>Użytkownicy:</h2>
+            <ul id="users-list">
+                {% for user in users if not user.is_admin %}
+                <li>{{ user.name }} {{ user.surname }}: {{ user.username}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div id="messages_from_other_users" class="box">
+            <h2>Wiadomości od innych użytkowników:</h2>
+            <ul>
+                {% for message in messages %}
+                <li>{{ message.user.name }} {{ message.user.surname }}: {{ message.content }} <br>
+                    <small>{{ message.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</small>
+                </li>
+                {% endfor %}
+            </ul>
+            <div>
+                <h2>Wyślij wiadomość:</h2>
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    {{ form.content.label }} {{ form.content() }} <br>
+                    <button type="submit">Wyślij</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="logout-container">
+        <a href="/logout"><button class="button">Wyloguj się</button></a>
+    </div>
+
+</body>
+</html>

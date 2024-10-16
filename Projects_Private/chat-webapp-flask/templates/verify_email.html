@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weryfikacja e-maila</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</head>
+<body>
+    <h1>Weryfikacja e-maila</h1>
+    <form method="POST">
+        <label for="code">Wprowadź kod weryfikacyjny:</label>
+        <input type="text" name="verification_code" required>
+        <button type="submit">Zatwierdź</button>
+    </form>
+    <form method="POST" action="{{ url_for('resend_verification_code', user_id=user.id) }}">
+        <button type="submit">Wyślij kod ponownie</button>
+    </form>
+</body>
+</html>

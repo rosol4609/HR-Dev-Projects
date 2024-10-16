@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Rejestracja</h1>
+    <form id="register-form" method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }} {{ form.name() }} <br>
+        {{ form.surname.label }} {{ form.surname() }} <br>
+        {{ form.username.label }} {{ form.username() }} <br>
+        {{ form.email.label }} {{ form.email() }} <br>
+        {{ form.phone_number.label }} {{ form.phone_number() }} <br>
+        {{ form.password.label }} {{ form.password() }} <br>
+        <div id="register-message"></div>
+        <button class="button" type="submit">{{ form.submit() }}</button>
+    </form>
+    <a href="/login">Masz już konto? Zaloguj się</a>
+</body>
+</html>

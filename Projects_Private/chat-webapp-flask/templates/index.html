@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona główna</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .main {
+            text-align: center;
+            background-color: cadetblue;
+            width: 40%;
+            margin: 0 auto;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .main a {
+            margin: 10px;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+        .main a:hover {
+            background-color: rgb(50, 84, 85);
+            border-radius: 10px;
+            transition: 0.9s;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Strona Główna</h1>
+    <div class="main">
+        <a href="/register">Rejestracja</a>
+        <a href="/login">Logowanie</a>
+    </div>
+</body>
+</html>
+
