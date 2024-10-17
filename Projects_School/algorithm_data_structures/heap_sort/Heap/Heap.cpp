@@ -1,4 +1,4 @@
-﻿//rh51088 ALGO2 222A
+﻿//ALGO2 222A
 //Hubert Rosiński
 #include <iostream>
 #include <stdio.h>
