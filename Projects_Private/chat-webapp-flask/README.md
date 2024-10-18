@@ -27,33 +27,33 @@ Jest to prosta aplikacja webowa napisana w Pythonie przy użyciu frameworka Flas
 ### 1. Klonowanie repozytorium
 
 Najpierw sklonuj repozytorium na swój lokalny komputer:
-
+```bash
 git clone https://github.com/rosol4609/HR-Dev-Projects/Projects_Private/chat-webapp-flask.git
-
+```
 ### 2. Instalacja zależności
 
 Zainstaluj wszystkie wymagane pakiety z pliku 'requirements.txt' za pomocą komendy:
-
+```bash
 pip install -r requirements.txt
-
+```
 ### 3. Zainicjalizuj bazę danych 
 
 Przed uruchomieniem aplikacji wykonaj tę komendę:
-
+```bash
 flask db upgrade
-
+```
 ### 5. Uruchom aplikację 
 
 Domyślnie aplikacja działa pod adresem http://127.0.0.1:5000
-
+```bash
 flask run lub python app.py 
-
+```
 ## Panel administratora
 
 Aby uzyskać dostęp do panelu administratora, musisz utworzyć konto admina poprzez polecenie CLI (domyślne hasło to: "admin123"):
-
+```bash
 flask create-admin
-
+```
 ## Ustawienia serwera pocztowego
 
 W pliku app.py zmienna MAIL_USERNAME i MAIL_PASSWORD powinna być ustawiona na dane autoryzacyjne konta gmail, z którego będą wysyłane e-maile z kodem weryfikacyjnym
