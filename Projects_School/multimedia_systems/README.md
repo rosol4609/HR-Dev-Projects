@@ -1,4 +1,4 @@
-# Kompresja obrazów i danych przy użyciu RLE i Byterun Encoding
+# Kompresja bezstratna obrazów przy użyciu RLE i Byterun Encoding
 
 ## Opis projektu
 
