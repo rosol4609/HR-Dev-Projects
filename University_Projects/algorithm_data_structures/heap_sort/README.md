@@ -31,11 +31,12 @@ Aby skompilować i uruchomić projekt w Visual Studio 2022:
 3.Uruchom projekt.
 
 Alternatywnie, można skompilować kod za pomocą kompilatora g++ w terminalu:
-
+```bush
 g++ -o heap_sort main.cpp
-
+```
+```bush
 ./heap_sort
-
+```
 ## Struktura kodu
 - Konstruktor Kopca: Inicjuje kopiec o zadanej pojemności.
 - Operacje na Kopcu: Metody do wstawiania elementów, usuwania szczytu kopca oraz sprawdzania, czy kopiec jest pusty.
