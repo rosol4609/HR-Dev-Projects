@@ -23,9 +23,10 @@ Ten skrypt implementuje algorytm genetyczny (GA) w Pythonie, który maksymalizuj
 - numpy
 
 ## Instalacja zależności
-
+```bash
 pip install numpy matplotlib
-
+```
 ## Uruchomienie programu
-
+```bash
 python GeneticAlgoritm.py
+```
