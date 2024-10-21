@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferty Pracy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /*background: #ffffff;*/
+            background: rgb(255,255,255);
+            background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(90,74,227,1) 100%);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(105, 67, 212, 0.5); 
+            color: white;
+            padding: 10px;
+        }
+
+        .header img {
+            height: 40px;
+        }
+
+        .header nav {
+            display: flex;
+        }
+
+        .header nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            padding-left: 30px;
+            padding-right: 20px;
+            font-size: medium;
+            transition: 0.3s;
+        }
+        .header nav a:hover {
+            color: rgb(0, 3, 65);
+            
+        }
+        
+        .content {
+            display: flex;
+        }
+
+        #add {
+            flex: 7;
+            padding: 20px;
+        }
+        #add img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .job-offers {
+            flex: 3; 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .job-offer {
+            display: flex;
+            background-color: white;
+            box-shadow: 0px 0px 5px #ccc;
+            border-radius: 5%;
+            margin: 5px;
+            padding: 10px;
+            width: calc(100% - 10px);
+            height: 100px;
+        }
+        .job-offer h2, .job-offer p {
+            font-size: 0.8em;
+        }
+        .job-offer p {
+            color: gray;
+            opacity: 0.9;
+        }
+        .job-offer img {
+            height: 40px;
+            margin-right: 20px;
+        }
+        .full-width-div {
+            width: 100%; 
+            height: 400px; 
+            display: flex; 
+        }
+
+        .half-div {
+            flex: 1; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+        }
+
+        .half-div p {
+            font-weight: bold;
+            color: navy; 
+            font-size: 50px; 
+            padding: 0 20px; 
+        }
+        .full-width-div_2 {
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+
+        .full-width-div_2 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+        .text-on-image {
+            position: absolute;
+            right: 100px; 
+            bottom: 140px; 
+            font-weight: bold;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            display: inline-flex;
+            color: navy; 
+            font-size: 50px; 
+        }
+        .full-width-div_3 {
+            width: 100%;
+            height: 600px;
+            background-image: url('images/graf.png');
+            display: flex;
+        }
+        .full-width-div_3 p {
+            font-weight: bold;
+            color: navy; 
+            font-size: 50px;
+        }
+        .half-div_3 {
+            flex: 1; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+        }
+        #register {
+            background-color: rgba(255, 255, 255, 0.709);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px rgb(182, 182, 182);
+            width: 400px;
+            height: 340px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 95%; 
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .form-group input[type="submit"] {
+            width: auto; 
+            margin-top: 15px;
+            background-color: navy;
+            color: #FFF;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: rgb(52, 52, 167);
+        }
+        .footer {
+        background-color: rgba(105, 67, 212, 0.5);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        }
+        button {
+            font-weight: bold;
+            padding: 10px 20px; 
+            font-size: 28px; 
+            background-color: transparent;
+            color: navy;
+            border: 4px solid navy;
+            border-radius: 30px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: navy;
+            color: white;
+        }
+
+        @media (min-width: 600px) {
+            .job-offer {
+                width: calc(60% - 10px);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .job-offer {
+                width: calc(40% - 10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="images/nework.png" alt="Logo firmy">
+        <nav>
+            <a href="#">Oferty pracy</a>
+            <a href="#">Profile pracodawców</a>
+            <a href="#">Zaloguj się</a>
+        </nav>
+    </header>
+    <div class="content">
+        <div id="add">
+            <img src="images/baner.png" alt="reklama">
+        </div>
+        <div class="job-offers">
+            <div class="job-offer">
+                <img src="https://static.wikia.nocookie.net/8bit/images/0/03/Hp-logo.png/revision/latest?cb=20151023124734&path-prefix=pl" alt="Logo pracodawcy 1">
+                <div>
+                    <h2>Java Fullstuck Developer</h2>
+                    <p>12000 - 20000zl</p>
+                </div>
+            </div>
+
+            <div class="job-offer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/391px-Apple_logo_black.svg.png" alt="Logo pracodawcy 2">
+                <div>
+                    <h2>Swift Senior Enginner</h2>
+                    <p>15000 - 30000zl</p>
+                </div>
+            </div>
+
+            <div class="job-offer">
+                <img src="https://www.ing.pl/_fileserver/item/wvpbsyq.92721fd838676611e42d5593b6a64d8b061eebbfcdbcab36fdf9cf01a4965e5c" alt="Logo pracodawcy 3">
+                <div>
+                    <h2>CyberSecurity Specialist</h2>
+                    <p>21000 - 35000zl</p>
+                </div>
+            </div>
+
+            <div class="job-offer">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAilBMVEX////iAHThAHHoYZjlPobgAGbhAG3xl8D96/XjGHvhAGzwjrrhAG/iAHXgAGnoQpH+9Prym8PfAF7jI3vlFYDmMInpT5b3vNj73ez0rc3lKIT+8/n85vHwmrzvhLXvibj4zN7oWZTzo8jpTJX71untcqnrYZ/73+33w9roQ5Lsbqfwn73nRY3qW52ieB9aAAADjklEQVR4nO3d61biMBRA4ZgZK4SUgqJIvTFy8f7+rzcgyiikTYmOOWHt768H6V4tBWtXUAoAAAAAAAAAAAAAAAAAAAAA3pz8/hkn0QoP9c84jFd48DMopJBCCuu9ngwDfpZCoc5M1xwMTovirO0caJ8VxengYDGV1XdKLNS2mz0cDc97q8FfrgL9a/XD3vnwaGK7trpSXqG1ZWf6cbC2cGXaKa1NpNDms+nGYIPCheksdzfKKrT5dWtrsFmhUq1rZ6OkQp3NLx2DTQuVups7Xo+CCnU+cg42L1RqlG8Nyym0p3fuwV0K1d3p5pEqptA+9CoGdypUvclGopRC+1w5uFuhUsXnRCGFuqwe3LVQlZ8eIKNQ59tvEms7F7Y+nW5kFJr7msGdC9W9kVaYzeoGdy9Us0xWoW7XHKNBha22rEJzWzsYUKhujaRC3b6oHQwpvPh3PhVQaPr1gyGFqp8JKsxdH7c/CCq8zOUU6rlnMKhQzbWYwmzoGQwrHGZiCus+zrwKK2zlUgr1g28wrFAVWkih7fgGAws7Vkih8b0MQwuHRkrhuW8wsPBcSqH2DgYWKiFHqR54B0ML3z64RS+ceAdDC89kFNpH72Bo4aOVUXjtHQwtvBFSeOUdDC282v/CLHLhsV06fPIOhhY+Hb4+w/F3bGyQ687Szdg7GFo4vnl9Bv8LPbrQwnRQmD4K00dh+ihMH4XpozB9yRZ2jtz6m3cONSvs9St+n/ea+n9znDmZrf/UNCts5cb9C+P9BVx1B+3WbQsNC903S8e/TkOhovAdhRFQuEbhCoURULhG4QqFEVC4RuEKhRFQuEbhCoUR7H/h/l9N3P8rwo0le1W/MQrTR2H6KEwfhemjMH0Upo/C9O1/4R9n4Z/Ym/WN9r/w2VlYva5Ucnqls7CsWhosPevFET7zLsWQjql7wcdscwHJdN0aZ6FnYaKUzNz7UNeunpWS3sC9vKwe7MupZuQ+SBeHqXulzPQU7l242IlF7E37Hv2qXbjYiUexN+47jKvWP16y49ib93Xj7SVlPx6nB3XLLSah71l0XWvPUm/Cjcqstm8pKxM9o/amo7kxTVbN18a+jKbJvDVevEzOJkVR5qbbKO89smvysigWj32pX4ExvlZum37jwVbmkhX/B0fl/RRN1S+EKgCFFFIYX6v9xe/nkl/4/MXvWHuWXggAAAAAAAAAAAAAAAAAAAAgrr/YfD45+nRIcAAAAABJRU5ErkJggg==" alt="Logo pracodawcy 4">
+                <div>
+                    <h2>Junior Golang Developer</h2>
+                    <p>7000 - 10000zl</p>
+                </div>
+            </div>
+            <div class="job-offer">
+                <img src="data:image/png;base64,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" alt="Logo pracodawcy 3">
+                <div>
+                    <h2>Mid PHP Enginner</h2>
+                    <p>8000 - 15000zl</p>
+                </div>
+            </div>
+
+            <div class="job-offer">
+                <img src="https://opalbiz.com/wp-content/uploads/2020/07/MS-Logo.png" alt="Logo pracodawcy 4">
+                <div>
+                    <h2>C++ Junior Developer</h2>
+                    <p>8000 - 12000zl</p>
+                </div>
+            </div>
+            <div class="job-offer">
+                <img src="https://www.pngall.com/wp-content/uploads/5/Oracle-Logo-Transparent-Images.png" alt="Logo pracodawcy 3">
+                <div>
+                    <h2>Senior SQL Developer</h2>
+                    <p>14000 - 25000zl</p>
+                </div>
+            </div>
+
+            <div class="job-offer">
+                <img src="https://dreamintegration.com/wp-content/uploads/2016/09/cisco-logo-transparent-background.jpg" alt="Logo pracodawcy 4">
+                <div>
+                    <h2>Network Administrator</h2>
+                    <p>15000 - 18000zl</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="full-width-div">
+        <div class="half-div">
+            <p>Opublikuj własną ofertę pracy, szybko i wygodnie w jednym miejscu.</p>
+        </div>
+        <div class="half-div">
+            <button>Opublikuj ofertę pracy</button>
+        </div>
+    </div>
+    <div class="full-width-div_2">
+        <img src="images/div.png" alt="div">
+        <div class="text-on-image">Nie pozwól uciec swoim <br> marzeniom.</div>
+    </div>
+    <div class="full-width-div_3">
+        <div class="half-div_3">
+            <p>Nie masz u nas konta? <br> Zarejestruj się szybko i wygodnie.</p>
+        </div>
+        <div class="half-div_3">
+            <div id="register">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Imię:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="surname">Nazwisko:</label>
+                        <input type="text" id="surname" name="surname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Hasło:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Zarejestruj">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2023 WorkFinder. Wszelkie prawa zastrzeżone.</p>
+      </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

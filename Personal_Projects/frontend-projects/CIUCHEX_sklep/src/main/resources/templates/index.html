@@ -1,0 +1,94 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CIUCHEX</title>
+    <link rel="stylesheet" type="text/css" href="/css/STYLE.css">
+</head>
+<body>
+    <header>
+        <h2 style="text-align: center;">CIUCHEX</h2>
+    </header>
+    <div id="container">
+        <nav>
+            <ul>
+                <li><a href="/" style="font-style: arial;">Strona główna</a></li>
+                <li><a href="/odziez">Odzież</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+                <li><a href="/produkt">Produkt</a></li>
+                <li><a href="/logowanie">Logowanie</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="main-content">
+                Tekst
+            </div>
+        </main>
+    </div>
+    <footer>
+        <h6 style="text-align: center;">Stopka</h6>
+    </footer>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang = "pl" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <title>Mój Sklep</title>
+    <link rel="stylesheet" type="text/css" href="/css/STYLE.css">
+</head>
+<body>
+
+<header>
+    <div class="logo"><img src="ciuchex_logo.jpg" width="180" height="48"></div>
+    <nav>
+        <ul>
+            <li><a href="/">Strona główna</a></li>
+            <li><a href="#">Produkty</a></li>
+            <li><a href="/kontakt">Kontakt</a></li>
+            <li th:if="${session.Uzytkownik == null}"><a href="/logowanie">Zaloguj się</a></li>
+            <li class="user-info" th:if="${session.Uzytkownik}">
+                <a href="/panel" style="font-size: 25px;">Witaj <span th:text="${session.Uzytkownik.imie}"/>!</a>
+                <form th:if="${session.Uzytkownik}" action="/logout" method="post">
+                    <input type="submit" value="Wyloguj się"/>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!--<div class="product">
+        <img src="https://trenujzkrzychem.pl/environment/cache/images/500_500_productGfx_81ce3216cea6f2cc690c6ce0f48071ed.jpg" alt="Product 1">
+        <h2>Koszulka Nike Football</h2>
+        <p>Lekka i przewiewna</p>
+        <a href="#">Kup teraz</a>
+    </div>
+    <div class="product">
+        <img src="https://sklepkoszykarski.pl/environment/cache/images/500_500_productGfx_4564/Koszulka-Nike-Paul-George-PG.jpg" alt="Product 2">
+        <h2>Koszulka Nike Paul George</h2>
+        <p>Edycja limitowana</p>
+        <a href="#">Kup teraz</a>
+    </div>
+    <div class="product">
+        <img src="https://a.allegroimg.com/original/1e1e38/cd881638468fa01b3db44097c043" alt="Product 3">
+        <h2>Koszulka Nike NBA</h2>
+        <p>Los Angeles Clippers</p>
+        <a href="#">Kup teraz</a>
+    </div>-->
+    <div class="product" th:each="Produkt_M : ${ProduktyM}">
+        <img th:src="@{${Produkt_M.img_url}}">
+        <h2 th:text="${Produkt_M.nazwa_produktu}"></h2>
+        <p th:text="${Produkt_M.opis_produktu}"></p>
+        <span th:text="${Produkt_M.cena_za_sztuke}"></span> PLN
+        <a href="#" th:if="${session.Uzytkownik}">Kup teraz</a>
+        <a href="/logowanie" th:if="${session.Uzytkownik == null}">Kup teraz</a>
+    </div>
+</main>
+
+<footer>
+    © 2023 Sklep CIUCHEX
+</footer>
+
+</body>
+</html>

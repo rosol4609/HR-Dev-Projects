@@ -1,0 +1,144 @@
+/**body
+{
+    background-color: lightblue;
+    margin: 0;
+    font-family: 'Tahoma';
+}
+
+header
+{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: gray;
+}
+
+#container
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+}
+
+nav
+{
+    width: 200px;
+    height: 600px;
+    background-color: gray;
+    color: white;
+    font-style: arial;
+    font-size: 20px;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main
+{
+    float: left;
+    width: 800px;
+    height: 600px;
+    background-color: white;
+}
+
+aside
+{
+    float: left;
+    width: 100px;
+}
+
+footer
+{
+    clear: both;
+    background-color: gray;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: center;
+}*/
+
+body {
+    font-family: Arial, sans-serif;
+}
+.logo {
+    background-image: url("ciuchex_logo.jpg")
+}
+img {
+    width: 180px;
+    height: 47px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+h1 {
+    text-align: center;
+}
+.user-info {
+    display: flex;
+    margin-left: 20px;
+}
+form {
+    margin-left: 20px;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        padding: 0;
+}
+sub {
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+nav ul li.logout {
+    margin-left: 20px;
+}
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav ul li form {
+    display: inline;
+    margin-right: auto;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.product {
+    width: 200px;
+    margin: 20px;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e7e7e7;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
+
