@@ -19,7 +19,7 @@ Prosta gra zręcznościowa stworzona w HTML5 Canvas i JavaScript. Twoim zadaniem
 
 1. Pobierz lub sklonuj repozytorium:
    ```bash
-   git clone https://github.com/twoje-repozytorium.git
+   git clone https://github.com/rosol4609/HR-Dev-Projects.git
    ```
 2. Otwórz plik **index.html** w dowolnej przeglądarce internetowej.
 
