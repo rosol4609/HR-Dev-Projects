@@ -1,4 +1,4 @@
-const API_KEY = env.API_KEY;
+const API_KEY = '77ba37e18b6ef093b2e36e2dc9a43511';
 const searchButton = document.querySelector('.search-button');
 const searchBar = document.querySelector('.search-bar');
 const weatherBox = document.querySelector('.weather-box');
