@@ -18,8 +18,13 @@ Password Generator to aplikacja desktopowa napisana w Pythonie z wykorzystaniem 
 - PyQt5
 
 Zależności można zainstalować za pomocą pliku `requirements.txt`:
+  ```bash
+      pip install -r requirements.txt
+  ```
 
-pip install -r requirements.txt
+## Zrzuty ekranu
+![Zrzut ekranu 2024-11-22 141344](https://github.com/user-attachments/assets/1a8fb789-4fcc-4028-81f7-04fbbdbf87bd)
+![Zrzut ekranu 2024-11-22 141442](https://github.com/user-attachments/assets/28f62e86-a47a-4728-a209-b19b19f2b811)
 
 ## Licencja
 
