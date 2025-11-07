@@ -1,0 +1,6 @@
+# Ignorowanie folderów node_modules
+node_modules/
+# Ignorowanie plików środowiskowych
+.env
+# Ignorowanie plików budowania Next.js
+.next/
