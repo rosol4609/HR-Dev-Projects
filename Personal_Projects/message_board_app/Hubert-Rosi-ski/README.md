@@ -1,51 +1,38 @@
-# Zadanie Rekrutacyjne
+# Message Board App
 
-## Cel
+A **full-stack message board system** built with **Next.js (frontend)**, **Express.js (backend)**, and **MySQL (database)** — containerized using **Docker Compose**.  
+It allows users to register, log in, and manage messages through an authenticated dashboard.
 
-Rozbudowa istniejącego projektu poprzez implementację formularza do dodawania wiadomości do bazy danych. Dodatkowo, wiadomości powinny być wyświetlane w tabeli z następującymi kolumnami: ID, Wiadomość, Akcje.
+---
 
-## Wymagania
+## Tech Stack
 
-- Node.js v18.17.0+
-- Docker v20.10.11+
+| Layer | Technology |
+|-------|-------------|
+| **Frontend** | [Next.js 14](https://nextjs.org/) + [React](https://react.dev/) |
+| **UI / Styling** | [shadcn/ui](https://ui.shadcn.com/) + [Tailwind CSS](https://tailwindcss.com/) |
+| **Backend** | [Express.js](https://expressjs.com/) + [Sequelize ORM](https://sequelize.org/) |
+| **Database** | [MySQL 8](https://www.mysql.com/) |
+| **Auth** | JWT + Secure Cookies |
+| **DevOps** | [Docker](https://www.docker.com/) + [Docker Compose](https://docs.docker.com/compose/) |
 
-### Formularz dodawania wiadomości
+---
 
-- Umożliwia wprowadzenie treści wiadomości oraz dodanie jej do bazy danych.
+## Features
 
-### Tabela wiadomości
+✅ Secure authentication (register / login / logout)  
+✅ JWT-based session management  
+✅ Message board with add and list views  
+✅ Persistent data via MySQL  
+✅ Responsive dark theme (shadcn + Tailwind)  
+✅ Toast notifications for actions and feedback  
+✅ Fully containerized — runs with one command  
 
-- Wyświetla listę wiadomości z kolumnami: ID, Wiadomość, Akcje.
-- W każdym wierszu w kolumnie "Akcje" powinny znajdować się dwie funkcjonalności:
-  - **Edycja**: Po naciśnięciu przycisku "Edytuj", powinien pojawić się popup z formularzem umożliwiającym edycję wybranej wiadomości.
-  - **Usuwanie**: Po naciśnięciu przycisku "Usuń", wiadomość powinna zostać usunięta z bazy danych.
+---
 
-### Backend
+## Running with Docker
 
-- Należy samodzielnie zaimplementować backend, który obsłuży dodawanie, edytowanie i usuwanie wiadomości z bazy danych.
+1️⃣ Build & Start All Containers
 
-### Użycie RTK Query
+**docker compose up --build**
 
-- Do komunikacji z serwerem należy wykorzystać RTK Query.
-
-### Komponenty ShadCN
-
-- W projekcie należy zastosować gotowe komponenty z biblioteki ShadCN, co umożliwi szybkie i estetyczne tworzenie interfejsu użytkownika.
-
-### Uruchomienie projektu
-
-Aby uruchomić projekt, należy w terminalu w głównym katalogu projektu wpisać:
-
-```
-docker compose up
-```
-
-## Dystrybucja
-
-Wynik powinien być wykonany na osobnej gałęzi i przesłany jako pull request do użytkownika @BiznesportTech.
-
-## Dodatkowe wskazówki
-
-- Zadbaj o walidację danych w formularzu.
-- Upewnij się, że interfejs użytkownika jest intuicyjny i przyjazny.
-- Zastosuj najlepsze praktyki programistyczne w kodzie frontendowym i backendowym.
